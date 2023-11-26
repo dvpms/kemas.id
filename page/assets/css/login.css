@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.bg-color {
+    background-color: #002b3a;
+}
+
+.navbar-collapse {
+    transition: 0.3s ease-out;
+    max-height: 0;
+    width: 100%;
+    text-align: center; 
+}
+
+.navbar-collapse.show {
+    max-height: 500px; 
+    padding-bottom: 10px;
+}
+
+.navbar-nav {
+    display: inline-block; 
+}
+
+.navbar-toggler {
+    display: block; 
+}
+
+.image {
+    width: 115px;
+    height: 35px;
+}
+
+.profile-menu .dropdown-menu {
+    right: 0;
+    left: unset;
+}
+
+.profile-menu .fa-fw {
+    margin-right: 10px;
+}
+
+.toggle-change::after {
+    border-top: 0;
+    border-bottom: 0.3em solid;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.form-label {
+    margin-bottom: 8px;
+}
+
+.form-control {
+    margin-bottom: 16px;
+}
+
+.button-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-login button {
+    background-color: #30acb7;
+    border: white;
+}
+
+.button-login button:hover {
+    background-color: #002b3a;
+    border: white;
+}

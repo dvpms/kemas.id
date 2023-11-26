@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-color {
+    background-color: #002b3a;
+}
+
+.navbar-collapse {
+    transition: 0.3s ease-out;
+    max-height: 0;
+    width: 100%;
+    text-align: center; 
+}
+
+.navbar-collapse.show {
+    max-height: 500px; 
+    padding-bottom: 10px;
+}
+
+.navbar-nav {
+    display: inline-block; 
+}
+
+.navbar-toggler {
+    display: block; 
+}
+
+.image {
+    width: 115px;
+    height: 35px;
+}
+
+.profile-menu .dropdown-menu {
+    right: 0;
+    left: unset;
+}
+
+.profile-menu .fa-fw {
+    margin-right: 10px;
+}
+
+.toggle-change::after {
+    border-top: 0;
+    border-bottom: 0.3em solid;
+}
+
+
+
+
+h3.header-text {
+    margin-top: 65px;
+    padding-left: 7%;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left; 
+}
+
+.form-container {
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.card {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.form-label {
+    margin-bottom: 8px;
+}
+
+.form-control {
+    margin-bottom: 16px;
+}
+
+.button-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-submit button {
+    background-color: #30acb7;
+    border: white;
+}
+
+.button-submit button:hover {
+    background-color: #002b3a;
+    border: white;
+}
+
+.left-text {
+    margin: 0;
+}
+
+.judul-jenis{
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+footer p{
+    font-size: 18px;
+}

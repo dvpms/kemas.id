@@ -1,0 +1,196 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.bg-color {
+    background-color: #002b3a;
+}
+
+.navbar-collapse {
+    transition: 0.3s ease-out;
+    max-height: 0;
+    width: 100%;
+    text-align: center; 
+}
+
+.navbar-collapse.show {
+    max-height: 500px; 
+    padding-bottom: 10px;
+}
+
+.navbar-nav {
+    display: inline-block; 
+}
+
+.navbar-toggler {
+    display: block; 
+}
+
+.image {
+    width: 115px;
+    height: 35px;
+}
+
+.profile-menu .dropdown-menu {
+    right: 0;
+    left: unset;
+}
+
+.profile-menu .fa-fw {
+    margin-right: 10px;
+}
+
+.toggle-change::after {
+    border-top: 0;
+    border-bottom: 0.3em solid;
+}
+
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* flex-grow: 1; */
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 240px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.username-text {
+    font-size: 18px;
+}
+
+.edit-username-button {
+    background-color: #30acb7 !important;
+    border-color: #30acb7 !important;
+}
+
+.edit-username-button:hover {
+    background-color: #002b3a !important;
+    border-color: #002b3a !important;
+}
+
+.upload-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-file label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    width: 90%; /* agar tombol simpan dan choose file mengambil lebar yang sama */
+    justify-content: center;
+}
+
+.button-container input {
+    flex-grow: 1;
+    max-width: 60%; /* Atur lebar maksimum tombol "Choose File" */
+}
+
+.button-container button {
+    margin-left: 0px; /* untuk memberi sedikit ruang antara tombol choose file dan simpan */
+    border-radius: 10px;
+}
+
+.button-container button:hover {
+    background-color: #002b3a;
+}
+
+button {
+    background-color: #30acb7;
+    /* Warna latar belakang tombol */
+    color: #fff;
+    /* Warna teks tombol */
+    padding: 8px 16px;
+    /* Padding tombol */
+    border: none;
+    /* Menghilangkan border tombol */
+    cursor: pointer;
+}
+
+/* footer {
+    background-color: #002b3a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    
+    bottom: 0;
+    min-width: 100%;
+    margin-top: auto;
+    font-size: 18px;
+} */
+
+footer{
+    margin-top: auto;
+    font-size: 18px;
+    min-width: 100%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 390px) {
+    .edit-profile-container{
+        width: 80%;
+        margin: auto;
+    }
+
+    .avatar-container {
+        position: relative;
+        width: 180px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .user-container { 
+        flex-direction: column;
+    }
+    .button-container {
+        flex-direction:column; /* Change to row layout for small screens */
+    }
+
+    .button-container {
+        /* display: flex; */
+        width: 65%; /* agar tombol simpan dan choose file mengambil lebar yang sama */
+        /* justify-content: center; */
+    }
+
+    .button-container button {
+        width: 60%;
+        margin: auto;
+    }
+
+    .button-container input {
+        flex-grow: 1;
+        max-width: 95%; /* Atur lebar maksimum tombol "Choose File" */
+        margin-bottom: 17px;
+    }
+}
