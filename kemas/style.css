@@ -1,0 +1,30 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+img.navbar-img {
+  max-width: 80px; /* Menentukan lebar maksimum gambar */
+  height: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0; /* Menghapus padding default dari daftar */
+}
+.navbar-nav .nav-item {
+  text-align: center;
+  /* Memastikan setiap item mengambil sebagian dari lebar yang tersedia */
+}
+.back-to-home {
+  margin-right: 60rem; /* Menentukan margin kiri */
+}
+.navbar {
+  background-color: rgb(83, 143, 222);
+}

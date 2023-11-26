@@ -1,0 +1,80 @@
+/* style.css */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: rgb(83, 143, 222);
+}
+
+.navbar-brand img {
+  max-width: 80px;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.nav-underline .nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-underline .nav-link:hover {
+  text-decoration: underline;
+}
+
+.carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Add more styles for the "pengumuman" section if needed */
+/* For example: */
+/* 
+   h1 {
+       font-size: 2rem;
+       color: rgb(83, 143, 222);
+   }
+   p {
+       color: #333;
+   }
+*/
+
+.footer {
+  background-color: rgb(83, 143, 222);
+  color: white;
+  padding: 15px 0;
+}
+
+/* Adjust the profile icon in the navbar */
+.profile-menu .fa-circle-user {
+  font-size: 1.5rem;
+}
+
+/* Optional: Add animation to the "pengumuman" section */
+/* Adjust the animation duration and delay based on your preference */
+h1 {
+  color: black;
+}
+p {
+  color: black;
+}
+
+/* Uncomment the following if you want to add animation on scroll */
+/*
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+*/
+
+/* Uncomment the following if you want to add animation on scroll */
+/*
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+*/

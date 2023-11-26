@@ -1,0 +1,47 @@
+/* style.css */
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+img.navbar-img {
+  max-width: 80px;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.navbar-nav .nav-item {
+  text-align: center;
+}
+
+.navbar-nav.ms-auto {
+  margin-left: auto;
+}
+
+.navbar {
+  background-color: rgb(83, 143, 222);
+}
+
+#carouselExampleIndicators {
+  margin: 0 auto;
+}
+
+.container.mt-5 {
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 20px;
+}
