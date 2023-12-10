@@ -78,16 +78,23 @@ class LoginController
     protected function attemptLogin(Request $request)
     {
         try {
-            return $this->guard()->attempt(
+            $attempt = $this->guard()->attempt(
                 $this->credentials($request),
                 $request->filled('remember')
             );
+
+            if (!$attempt) {
+                session()->flash('error', __('Email or password is incorrect.'));
+            }
+
+            return $attempt;
         } catch (HttpResponseException $exception) {
             $this->incrementLoginAttempts($request);
 
             throw $exception;
         }
     }
+
 
     /**
      * The user has been authenticated.
@@ -98,7 +105,7 @@ class LoginController
      */
     protected function authenticated(Request $request, $user)
     {
-        if (! $user->isActive()) {
+        if (!$user->isActive()) {
             auth()->logout();
 
             return redirect()->route('frontend.auth.login')->withFlashDanger(__('Your account has been deactivated.'));

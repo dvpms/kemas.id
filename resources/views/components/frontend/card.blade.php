@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card bb-orange-kemas">
     @if (isset($header))
-        <div class="card-header">
+        <div class="card-header blue-bg-kemas">
             {{ $header }}
 
             @if (isset($headerActions))

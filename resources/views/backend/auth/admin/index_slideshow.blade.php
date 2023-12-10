@@ -26,7 +26,7 @@
 
                     <div class="row">
                         @foreach ($images as $file)
-                            <div class="col-md-3">
+                            <div class="col-md-3 mb-4">
                                 <div class="card" style="height: 100%">
                                     <a href="{{ asset($file->path) }}" target="_blank">
                                         <img src="{{ asset($file->path) }}" class="card-img-top" alt="File"

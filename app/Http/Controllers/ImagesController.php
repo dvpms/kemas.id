@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Images;
 use Auth;
@@ -53,7 +54,43 @@ class ImagesController extends Controller
 
     public function index_gallery()
     {
-        $data['images'] = Images::where('jenis', 'gallery')->orderBy('id', 'DESC')->get();
-        // return response()->json($images);
+        $image = Images::where('jenis', 'gallery')->orderBy('id', 'DESC')->get();
+        $data['images'] = $image->groupBy('uuid');
+        return view('backend.auth.admin.index_gallery', $data);
+    }
+    public function store_gallery(Request $request)
+    {
+        $uuid = Str::uuid()->toString();
+        if ($request->hasFile('file')) {
+            foreach ($request->file('file') as $file) {
+                $destinationPath = 'gallery';
+                $filename = Str::uuid()->toString() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs($destinationPath, $filename, 'public');
+
+
+                $image = new Images;
+                $image->uuid = $uuid;
+                $image->jenis = 'gallery';
+                $image->alt = $request->title;
+                $image->path = "storage/{$destinationPath}/{$filename}";
+                $image->status = 1;
+                $image->upload_by = Auth::user()->name;
+                $image->save();
+            }
+        }
+    }
+    public function destroy_gallery($id)
+    {
+        $images = Images::where('uuid', $id)->get();
+        foreach ($images as $image) {
+            $filePath = str_replace('storage/', '', $image->path);
+
+            if (Storage::disk('public')->exists($filePath)) {
+                Storage::disk('public')->delete($filePath);
+            } else {
+            }
+        }
+        Images::where('uuid', $id)->delete();
+        return response()->json(null, 204);
     }
 }
