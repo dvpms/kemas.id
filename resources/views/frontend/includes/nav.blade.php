@@ -86,7 +86,7 @@
                         href="{{ route('frontend.index') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::is('home.index_berita') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->segment(2) === 'berita' ? 'active' : '' }}"
                         href="{{ route('home.index_berita') }}">Berita</a>
                 </li>
                 <li class="nav-item">

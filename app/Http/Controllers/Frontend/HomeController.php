@@ -52,15 +52,21 @@ class HomeController
     }
     public function index_berita_kategori($sumber, $kategori)
     {
-        $url = "https://api-berita-indonesia.vercel.app/{$sumber}/{$kategori}/";
-        $response = Http::get($url);
+        // $url = "https://api-berita-indonesia.vercel.app/{$sumber}/{$kategori}/";
+        // $response = Http::get($url);
 
-        if ($response->successful()) {
-            $data = $response->json();
-            return $data;
-            return view('frontend.index_berita_kategori', ['berita' => $data]);
+        $client = new Client(['verify' => false]);
+        $response = $client->request('GET', 'https://api-berita-indonesia.vercel.app/' . $sumber . '/' . $kategori);
+
+        if ($response->getStatusCode() == 200) {
+            $data = json_decode($response->getBody()->getContents(), true);
+
+            if (isset($data['data']) && isset($data['data']['posts'])) {
+                return view('frontend.index_berita_kategori', ['news' => $data['data']['posts']]);
+            } else {
+                return view('frontend.index_berita_kategori', ['news' => null]);
+            }
         } else {
-            // Handle error
             return back()->withErrors('Tidak dapat mengambil data dari API.');
         }
     }
