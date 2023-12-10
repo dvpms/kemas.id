@@ -27,6 +27,7 @@ class Announcement extends Model
      * @var string[]
      */
     protected $fillable = [
+        'uuid',
         'area',
         'type',
         'message',

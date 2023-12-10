@@ -1,11 +1,6 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
-        <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-            <use xlink:href="{{ asset('img/brand/coreui.svg#full') }}"></use>
-        </svg>
-        <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="CoreUI Logo">
-            <use xlink:href="{{ asset('img/brand/coreui.svg#signet') }}"></use>
-        </svg>
+        <img src="{{ asset('img/Logo-kemas-white.png') }}" class="img-fluid p-2">
     </div><!--c-sidebar-brand-->
 
     <ul class="c-sidebar-nav">
@@ -29,20 +24,29 @@
         </li>
 
         <li class="c-sidebar-nav-item">
-            <a href="{{ route('images.index_slideshow') }}" class="c-active c-sidebar-nav-link">
-                <i class="fas fa-newspaper"></i> Berita & Pengumuman</a>
+            <a href="{{ route('admin.index_news') }}"
+                class="c-sidebar-nav-link {{ request()->segment(1) === 'admin' && request()->segment(2) === 'news' ? 'c-active' : '' }}">
+                <i class="c-sidebar-nav-icon fas fa-newspaper"></i> Berita </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a href="{{ route('images.index_slideshow') }}" class="c-active c-sidebar-nav-link">
-                <i class="fas fa-check"></i> Persetujuan</a>
+            <a href="{{ route('admin.index_announce') }}"
+                class="c-sidebar-nav-link {{ request()->segment(1) === 'admin' && request()->segment(2) === 'announce' ? 'c-active' : '' }}">
+                <i class="c-sidebar-nav-icon fas fa-scroll"></i> Pengumuman </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a href="{{ route('images.index_slideshow') }}" class="c-active c-sidebar-nav-link">
-                <i class="fas fa-users"></i> Data Warga</a>
+            <a href="{{ route('admin.index_approval') }}"
+                class="c-sidebar-nav-link {{ request()->segment(1) === 'admin' && request()->segment(2) === 'approval' ? 'c-active' : '' }}">
+                <i class="c-sidebar-nav-icon fas fa-check"></i> Persetujuan</a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a href="{{ route('images.index_slideshow') }}" class="c-active c-sidebar-nav-link">
-                <i class="fas fa-envelope"></i> Kotak Saran</a>
+            <a href="{{ route('admin.index_warga') }}"
+                class="c-sidebar-nav-link {{ request()->segment(1) === 'admin' && request()->segment(2) === 'warga' ? 'c-active' : '' }}">
+                <i class="c-sidebar-nav-icon fas fa-users"></i> Data Warga</a>
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route('admin.index_inbox') }}"
+                class="c-sidebar-nav-link {{ request()->segment(1) === 'admin' && request()->segment(2) === 'inbox' ? 'c-active' : '' }}">
+                <i class="c-sidebar-nav-icon fas fa-envelope"></i> Kotak Saran</a>
         </li>
         @if (
             $logged_in_user->hasAllAccess() ||
