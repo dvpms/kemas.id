@@ -32,4 +32,4 @@ workflows:
       - build
   deploy:
     jobs:
-      -deploy
+      - deploy
